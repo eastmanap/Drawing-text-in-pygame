@@ -29,6 +29,15 @@ def main():
         screen.fill(colors.WHITE)  # Use color from config
         
         # Draw on the screen
+        def draw_text(text, font, color, pos):
+            img = font.render(text, True, color)
+            screen.blit(img, pos)
+        
+        text_font = pygame.font.Font('Minecraft-Seven_v2.ttf', 100)
+        draw_text('You Died!', text_font, colors.YOUTUBE_AD_RED, (175, 200))
+
+        text_font2 = pygame.font.SysFont('Arial', 30)
+        draw_text('Try again?', text_font2, colors.BLACK, (325, 350))
     
         pygame.display.flip()
         # Limit frame rate to certain number of frames per second (FPS)
